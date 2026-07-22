@@ -2,6 +2,25 @@
 
 @import "@heroui/styles";
 
+@theme {
+  --color-primary: #2563eb;
+  --color-secondary: #1B5A7D;
+  --color-success: #16a34a;
+  --color-danger: #dc2626;
+
+  --color-background: #ffffff;
+  --color-foreground: #171717;
+
+  /* Paleta warning (escala amarelo/laranja) — necessária para as classes warning-* usadas nos componentes */
+  --color-warning-50:  #fff7ed;
+  --color-warning-100: #ffedd5;
+  --color-warning-200: #fed7aa;
+  --color-warning-300: #fdba74;
+  --color-warning-400: #fb923c;
+  --color-warning-500: #f5a524;
+  --color-warning-600: #d97706;
+}
+
 *,
 *::before,
 *::after {
