@@ -32,7 +32,7 @@ export function Hero({ products }: HeroProps) {
           key={product.id}
           className="flex flex-1 flex-col items-center gap-8 text-center md:items-start md:text-left"
         >
-          <h1 className="text-4xl font-bold leading-tight max-w-md text-secondary flex-wrap md:text-5xl">
+          <h1 className="text-4xl font-bold leading-tight  text-wrap text-secondary  md:text-5xl">
             {product.name}
           </h1>
 

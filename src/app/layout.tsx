@@ -1,5 +1,6 @@
 import { Poppins, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { TopBar } from "../shared/ui/top-bar";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -17,6 +18,12 @@ export const metadata = {
   description: "",
 };
 
+const topBarMock = {
+  phone: "(+98) 0234 456 789",
+  storeHref: "#",
+  trackOrderHref: "#",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -27,7 +34,10 @@ export default function RootLayout({
       lang="en"
       className={`${poppins.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <TopBar {...topBarMock} />
+        {children}
+      </body>
     </html>
   );
 }
