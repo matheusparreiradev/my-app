@@ -12,6 +12,8 @@ export const PRODUCTS_MOCK: Product[] = [
     imageUrl: CAMERA_IMAGE,
     category: "cameras",
     featured: true,
+    inStock: false,
+    quantityInStock: 10,
   },
   {
     id: "2",
@@ -22,6 +24,8 @@ export const PRODUCTS_MOCK: Product[] = [
     imageUrl: CAMERA_IMAGE,
     category: "cameras",
     featured: true,
+    inStock: true,
+    quantityInStock: 5,
   },
   {
     id: "3",
@@ -32,15 +36,8 @@ export const PRODUCTS_MOCK: Product[] = [
     imageUrl: CAMERA_IMAGE,
     category: "cameras",
     featured: true,
-  },
-  {
-    id: "4",
-    name: "Fujifilm X-T30 II",
-    description: "Mirrorless com filmagem 4K e simulação de filme clássica.",
-    price: 3499.0,
-    imageUrl: CAMERA_IMAGE,
-    category: "cameras",
-    featured: true,
+    inStock: true,
+    quantityInStock: 8,
   },
   {
     id: "5",
@@ -50,6 +47,8 @@ export const PRODUCTS_MOCK: Product[] = [
     originalPrice: 2799.0,
     imageUrl: CAMERA_IMAGE,
     category: "cameras",
+    inStock: true,
+    quantityInStock: 12,
   },
   {
     id: "6",
@@ -58,6 +57,8 @@ export const PRODUCTS_MOCK: Product[] = [
     price: 2999.0,
     imageUrl: CAMERA_IMAGE,
     category: "cameras",
+    inStock: true,
+    quantityInStock: 7,
   },
   {
     id: "7",
@@ -67,6 +68,8 @@ export const PRODUCTS_MOCK: Product[] = [
     originalPrice: 3899.0,
     imageUrl: CAMERA_IMAGE,
     category: "cameras",
+    inStock: true,
+    quantityInStock: 4,
   },
   {
     id: "8",
@@ -75,5 +78,7 @@ export const PRODUCTS_MOCK: Product[] = [
     price: 4199.0,
     imageUrl: CAMERA_IMAGE,
     category: "cameras",
+    inStock: true,
+    quantityInStock: 6,
   },
 ];

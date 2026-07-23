@@ -7,6 +7,9 @@ export type Product = {
   imageUrl?: string;
   category: ProductCategory;
   featured?: boolean;
+  inStock?: boolean;
+  quantityInStock?: number;
 };
+
 
 export type ProductCategory = "cameras" | "audio" | "computers" | "tablets";

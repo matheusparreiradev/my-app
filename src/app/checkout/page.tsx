@@ -1,10 +1,10 @@
 import { ListProducts, makeProductRepository } from "@/features/products";
+import { CheckoutButton } from "@/features/checkout";
 
-
-async function CheckoutPage({searchParams}: { searchParams: Promise<{ productId: string }> }) {
+async function CheckoutPage({ searchParams }: { searchParams: Promise<{ productId: string }> }) {
 
     const { productId } = await searchParams;
-    console.log("productId", productId);
+
     const repository = makeProductRepository();
     const listProducts = new ListProducts(repository);
     const products = await listProducts.execute();
@@ -19,7 +19,7 @@ async function CheckoutPage({searchParams}: { searchParams: Promise<{ productId:
             <p>{product.name}</p>
             <p>{product.price}</p>
             <p>{product.description}</p>
-
+            <CheckoutButton inStock={product.inStock} />
         </div>
     )
 }
