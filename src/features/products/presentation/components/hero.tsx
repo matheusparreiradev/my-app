@@ -1,16 +1,19 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 import type { Product } from "../../domain/entities/product";
 import { Button } from "../../../../shared/ui/button";
 import { SliderDots } from "../../../../shared/ui/slider-dots";
 
+
 type HeroProps = {
   products: Product[];
 };
 
 export function Hero({ products }: HeroProps) {
+  const router = useRouter();
   const [active, setActive] = useState(0);
   const product = products[active];
 
@@ -25,6 +28,15 @@ export function Hero({ products }: HeroProps) {
     )
     : 0;
 
+    const handleCheckout = (productId: string) => {
+      //caso precise passar cupon, variation id relacionado ao produto exibido no slide promocional.
+      const params = new URLSearchParams({
+        productId: productId,
+      });
+      console.log("params", params.toString());
+      router.push(`/checkout?${params.toString()}`);
+    };
+  
   return (
     <section className="relative flex w-full min-h-[80vh] items-center justify-center overflow-hidden bg-white">
       <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-center gap-12 px-6 py-16 md:flex-row md:items-center md:gap-20 md:py-20">
@@ -37,7 +49,7 @@ export function Hero({ products }: HeroProps) {
           </h1>
 
           <div className="flex flex-wrap justify-center gap-3 pt-2 md:justify-start">
-            <Button as="a" href="#popular" variant="primary">
+            <Button variant="primary" onClick={() => handleCheckout(product.id)}>
               Comprar agora
             </Button>
             <Button as="a" href="#categorias" variant="outline">
